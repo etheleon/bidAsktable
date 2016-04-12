@@ -73,8 +73,8 @@ public class bidAskTable extends JFrame{
 
 
         // Add the table to a scrolling pane
-//        scrollPane = new JScrollPane( table );
-//        topPanel.add( scrollPane, BorderLayout.CENTER );
+        scrollPane = new JScrollPane( table );
+        topPanel.add( scrollPane, BorderLayout.CENTER );
     }
 
 //    public class Producer implements Runnable {
@@ -107,11 +107,6 @@ public class bidAskTable extends JFrame{
 //        }
 //    }
 
-//    SwingUtilities.invokeLater(new Runnable() {
-//            public void run() {
-//                bidAskTable app = new bidAskTable();
-//                app.setVisible( true );
-//            }
 
     public static void main( String args[] ) throws Exception
     {
@@ -120,6 +115,14 @@ public class bidAskTable extends JFrame{
         s.joinGroup(group);
 
         byte[] buf = new byte[4000];
+
+
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                bidAskTable app = new bidAskTable();
+                app.setVisible(true);
+            }
+        });
 
         //
 //        BlockingQueue queue = new ArrayBlockingQueue(1024);
